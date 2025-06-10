@@ -31,13 +31,40 @@ class _AddNoteScreen extends State<AddNoteScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context);
-            Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => NotesScreen(),
-            )
-          );
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: const Text('Discard Note'),
+                content: Text(
+                  'Are you sure you want to discard note"?'
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NotesScreen(),
+                        )
+                      );
+                    },
+                    child: const Text(
+                      'Yes',
+                      style: TextStyle(
+                        color: Colors.red
+                      )  
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('No',),
+                  ),
+                ],
+              )
+            );
           },
         ),
       ),

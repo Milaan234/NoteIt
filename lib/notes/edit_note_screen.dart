@@ -57,18 +57,18 @@ class _EditNoteScreen extends State<EditNoteScreen> {
                         )
                       );
                     },
-                    child: const Text('Yes'),
+                    child: const Text(
+                      'Yes',
+                      style: TextStyle(
+                        color: Colors.red
+                      )  
+                    ),
                   ),
                   TextButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: const Text(
-                      'No',
-                      style: TextStyle(
-                        color: Colors.red
-                      )
-                    ),
+                    child: const Text('No',),
                   ),
                 ],
               )
