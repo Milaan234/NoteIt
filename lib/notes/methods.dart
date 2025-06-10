@@ -19,6 +19,7 @@ void addNote({required TextEditingController titleTextController, required TextE
       content: contentTextController.text,
       createdAt: DateTime.now(),
       id: total_notes,
+      updatedAt: DateTime.now(),
     )
   );
 }
@@ -28,6 +29,7 @@ void updateNote({required TextEditingController titleTextController, required Te
   Note updatedNote = boxNotes.get(indexKey);
   boxNotes.get(indexKey).title = titleTextController.text;
   boxNotes.get(indexKey).content = contentTextController.text;
+  boxNotes.get(indexKey).updatedAt = DateTime.now();
   updatedNote.save();
 }
 
@@ -104,7 +106,7 @@ Widget buildNotesList (BuildContext context) {
 
       // notes converted to list to sort them
       List notes = boxNotes.values.toList();
-      notes.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+      notes.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
       
       // shows if there are notes
       return ListView.builder(
@@ -145,7 +147,7 @@ Widget buildNotesList (BuildContext context) {
                         note.title,
                       ),
                       trailing: Text(
-                        DateFormat('MMM d, yyyy').format(note.createdAt),
+                        DateFormat('MMM d, yyyy').format(note.updatedAt),
                       ),
                     ),
                     trailing: SizedBox.shrink(),
@@ -220,7 +222,7 @@ Widget buildNotesList (BuildContext context) {
                         note.title,
                       ),
                       trailing: Text(
-                        DateFormat('MMM d, yyyy').format(note.createdAt),
+                        DateFormat('MMM d, yyyy').format(note.updatedAt),
                       ),
                     ),
                     trailing: SizedBox.shrink(),

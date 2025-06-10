@@ -13,12 +13,15 @@ class Note extends HiveObject{
   String? content;
   @HiveField(3)
   final DateTime createdAt;
+  @HiveField(4)
+  DateTime updatedAt;
 
   Note ({
     required this.id,
     required this.title,
     this.content,
-    required this.createdAt
+    required this.createdAt,
+    required this.updatedAt
   });
 
 }
