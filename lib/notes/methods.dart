@@ -25,8 +25,10 @@ void addNote({required TextEditingController titleTextController, required TextE
 
 // updates note
 void updateNote({required TextEditingController titleTextController, required TextEditingController contentTextController, required String indexKey}) {
+  Note updatedNote = boxNotes.get(indexKey);
   boxNotes.get(indexKey).title = titleTextController.text;
   boxNotes.get(indexKey).content = contentTextController.text;
+  updatedNote.save();
 }
 
 // deletes a note

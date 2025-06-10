@@ -5,7 +5,7 @@ import 'package:notes_app/notes/note.dart';
 import 'package:notes_app/notes/notes_screen.dart';
 
 // Acts as the ID for the notes
-int total_notes = 0;
+late int total_notes;
 
 void main() async {
 
@@ -14,6 +14,8 @@ void main() async {
   Hive.registerAdapter(NoteAdapter());
   boxNotes = await Hive.openBox<Note>('noteBox');
 
+  int current_notes_amount = boxNotes.length;
+  total_notes = current_notes_amount;
 
   runApp(const MyApp());
 }

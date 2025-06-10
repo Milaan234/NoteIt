@@ -4,7 +4,7 @@ part 'note.g.dart';
 
 // defines the Note class
 @HiveType(typeId: 1)
-class Note {
+class Note extends HiveObject{
   @HiveField(0)
   final int id;
   @HiveField(1)
