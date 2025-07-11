@@ -48,7 +48,8 @@ class _NotesScreen extends State<NotesScreen> {
           children: [
             Expanded(
               child: buildNotesList(context),
-            )
+            ),
+            SizedBox(height: 16.0),
           ],
         ),
       ),

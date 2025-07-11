@@ -77,61 +77,66 @@ class _EditNoteScreen extends State<EditNoteScreen> {
         ),
       ),
 
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: _titleTextController,
-                        decoration: const InputDecoration(
-                          labelText: 'Title',
-                          border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _titleTextController,
+                          decoration: const InputDecoration(
+                            labelText: 'Title',
+                            border: OutlineInputBorder(),
+                          ),
+                          // Optional
+                          onSubmitted: (_) {
+                            
+                          },
                         ),
-                        // Optional
-                        onSubmitted: (_) {
-                          
-                        },
                       ),
-                    ),
-                    const SizedBox(width: 8),
-                    // button to save changes to the note
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          updateNote(titleTextController: _titleTextController, contentTextController: _contentTextController, indexKey: widget.indexKey);
-                          _titleTextController.clear();
-                          _contentTextController.clear();
-                          Navigator.pop(context);
-                          Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => NotesScreen(),
-                          )
-                        );
-                        });
-                      }, 
-                      icon: const Icon(Icons.check),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: _contentTextController,
-                  maxLines: null,
-                  decoration: const InputDecoration(
-                    labelText: 'Content',
-                    border: OutlineInputBorder(),
+                      const SizedBox(width: 8),
+                      // button to save changes to the note
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            updateNote(titleTextController: _titleTextController, contentTextController: _contentTextController, indexKey: widget.indexKey);
+                            _titleTextController.clear();
+                            _contentTextController.clear();
+                            Navigator.pop(context);
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NotesScreen(),
+                            )
+                          );
+                          });
+                        }, 
+                        icon: const Icon(Icons.check),
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16),
+                  TextField(
+                    controller: _contentTextController,
+                    maxLines: null,
+                    decoration: const InputDecoration(
+                      labelText: 'Content',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+
+            SizedBox(height: 16.0),
+          ],
+        ),
       ),
 
     );
