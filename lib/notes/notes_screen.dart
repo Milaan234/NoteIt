@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/notes/add_note_screen.dart';
 import 'package:notes_app/notes/methods.dart';
 import 'package:notes_app/settings/settings_screen.dart';
+import 'package:notes_app/tasks/tasks_screen.dart';
 
 // notes screen, acts as the home screen
 class NotesScreen extends StatefulWidget {
@@ -39,6 +40,22 @@ class _NotesScreen extends State<NotesScreen> {
             );
           }
         ),
+
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.check_box),
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TasksScreen(),
+                )
+              );
+            }
+          ),
+        ],
+
       ),
 
       // body of the notes screen where all the notes appear

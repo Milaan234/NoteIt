@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/notes/methods.dart';
 import 'package:notes_app/notes/notes_screen.dart';
+import 'package:notes_app/tasks/methods.dart';
 
 // settings screen
 class SettingsScreen extends StatelessWidget {
@@ -54,6 +55,28 @@ class SettingsScreen extends StatelessWidget {
                     color: Colors.red
                   ),
                   onPressed: () { deleteAllNotes(context); },
+                )
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            // settings option of deleting all tasks
+            child: Row(
+              children: [
+                Text(
+                  'Delete all tasks',
+                  style: TextStyle(
+                  fontSize: 18,
+                ),
+                ),
+                IconButton(
+                  icon: const Icon(
+                    Icons.delete,
+                    color: Colors.red
+                  ),
+                  onPressed: () { deleteAllTasks(context); },
                 )
               ],
             ),

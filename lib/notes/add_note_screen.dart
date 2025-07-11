@@ -36,7 +36,7 @@ class _AddNoteScreen extends State<AddNoteScreen> {
               builder: (context) => AlertDialog(
                 title: const Text('Discard Note'),
                 content: Text(
-                  'Are you sure you want to discard note"?'
+                  'Are you sure you want to discard note?'
                 ),
                 actions: [
                   TextButton(
