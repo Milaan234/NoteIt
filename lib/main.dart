@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Notes',
+      title: 'NoteIt',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amberAccent),
       ),
