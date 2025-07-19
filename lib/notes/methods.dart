@@ -151,6 +151,7 @@ Widget buildNotesList (BuildContext context) {
                       ),
                     ),
                     trailing: SizedBox.shrink(),
+                    tilePadding: EdgeInsets.zero,
                     //children: <Widget>[ListTile(title: Text(""))],
                   ),
                 ),
@@ -226,6 +227,7 @@ Widget buildNotesList (BuildContext context) {
                       ),
                     ),
                     trailing: SizedBox.shrink(),
+                    tilePadding: EdgeInsets.zero,
                     children: <Widget>[ListTile(title: Text(note.content!))],
                   )
                 ),
