@@ -6,7 +6,7 @@
 **Then, it's time to NoteIt!**
 
 NoteIt is an easy-to-use notes app that lets you make, edit, and delete notes and tasks.
-<br><br>
+<br>
 
 
 *Don't get bogged down by overwhelming designs or overcomplicated elements.*
